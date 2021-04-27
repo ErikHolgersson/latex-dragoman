@@ -8,17 +8,17 @@ import os
 
 
 
-def queryDeepL(lang, text):
+def query_deepl(lang, text):
 	url	= "https://api-free.deepl.com/v2/translate"
-	data=__buildQueryJson("deepl", lang, text)	
+	data=_build_query_json("deepl", lang, text)	
 
 	response = requests.get(url, data)
 
-	translation = __handleResponseJson("deepl", response)
+	translation = _handle_response_json("deepl", response)
 	return(translation)
 
 
-def __buildQueryJson(api, lang, text):
+def _build_query_json(api, lang, text):
 	if(api=="deepl"):
 		key = os.getenv("DEEPL_KEY")
 		data = {	"auth_key": key,
@@ -27,12 +27,13 @@ def __buildQueryJson(api, lang, text):
 		return(data)	
 
 
-def __handleResponseJson(api, response):
+def _handle_response_json(api, response):
 	if(api=="deepl"):
-			jsonResponse = response.json()
-			translation = jsonResponse["translations"][0]["text"]
+			json_response = response.json()
+			translation = json_response["translations"][0]["text"]
 			return(translation)
 			
 
-myTranslation = queryDeepL("EN", "Gesundheit ist ein Zustand des vollkommenen körperlichen, geistigen und sozialen Wohlbefindens"
-					+" - und nicht die bloße Abwesenheit von Krankheit.")
+#my_translation = query_deepl("EN", "Gesundheit ist ein Zustand des vollkommenen körperlichen, geistigen und sozialen Wohlbefindens"
+#					+" - und nicht die bloße Abwesenheit von Krankheit.")
+#print(my_translation)
