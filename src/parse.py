@@ -22,15 +22,24 @@ def ltxfile_to_list(filename):
     return contentList
 
 def filter_params(ltx_list):
-    for i in range(0, ltx_list.length):
-        if ltx_list[i][1] in keep:
-                
-            print()
-        else:
-            print()
+    keep = { "\\title" , "\\section", "\\subsection", "\\date"}
     
-    return
+    filtered_list = list()
+    for i in range(0, len(ltx_list) ):
+        if ltx_list[i][0] in keep:
+            filtered_list.append(list(ltx_list[i]))
+        elif ltx_list[0] is "\\begin" and ltx_list[2] is '\{align\}':
+            filtered_list.append([ ltx_list[i][0], '', '', '' ])
+        else:
+            filtered_list.append([ ltx_list[i][0], '', '', ltx_list[i][3] ])
+    return filtered_list
 
-orig_list = ltxfile_to_list(sys.argv[1]):
+orig_list = ltxfile_to_list(sys.argv[1])
 trans_list = orig_list.copy()
+
+trans_list = filter_params(trans_list)
+
+print("Filtered List:")
+for entry in trans_list:
+    print(entry[0] + " / " + entry[1] + " / " + entry[2] + " / " + entry[3] + "\n")
 
