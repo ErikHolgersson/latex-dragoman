@@ -14,7 +14,7 @@ def ltxfile_to_list(filename):
 
     content = content.replace('\n', "###")
     content = content.replace('\\','\n\\')
-    print("CONTENT:\n" + str(content)+"\n##################")
+    #print("CONTENT:\n" + str(content)+"\n##################")
 
 
     contentList = re.findall('(\\\[A-Za-z]+)'+'(\[.*\])?'+'(\{.*\})?'+'(.*)'+'', content)
@@ -22,16 +22,32 @@ def ltxfile_to_list(filename):
     return contentList
 
 def filter_params(ltx_list):
-    keep = { "\\title" , "\\section", "\\subsection", "\\date"}
-    
+    keep = { "\\title" , "\\date", "\\chapter", "\\part", "\\section", "\\subsection",
+                "\\subsubsection", "\\paragraph", "\\subparagraph"}
+    delete = { "\\begin" }
+
     filtered_list = list()
-    for i in range(0, len(ltx_list) ):
-        if ltx_list[i][0] in keep:
+    
+    i = 0
+    while(i < len(ltx_list)):
+        # keep all params that appear in the rendered document
+        if(ltx_list[i][0] in keep):
             filtered_list.append(list(ltx_list[i]))
-        elif ltx_list[0] is "\\begin" and ltx_list[2] is '\{align\}':
-            filtered_list.append([ ltx_list[i][0], '', '', '' ])
+        
+        # filter out equations, other environments may stay
+        elif("\\begin" in ltx_list[i][0] and "align" in ltx_list[i][2]):
+            # filter out all equation strings in the align environment
+            print("Begin filterin the align-environment")
+            while("\\end" not in ltx_list[i][0]):
+                print("End not found, found \"" + ltx_list[i][0] + "\" instead")
+                filtered_list.append([ ltx_list[i][0], '', '', '' ])
+                i = i+1
+            print("end found.")
+        #only filter out params for all other fields.
         else:
             filtered_list.append([ ltx_list[i][0], '', '', ltx_list[i][3] ])
+        i = i+1
+        
     return filtered_list
 
 orig_list = ltxfile_to_list(sys.argv[1])
