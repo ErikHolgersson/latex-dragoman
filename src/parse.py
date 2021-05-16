@@ -56,6 +56,7 @@ trans_list = orig_list.copy()
 trans_list = filter_params(trans_list)
 
 print("Filtered List:")
+
 for entry in trans_list:
-    print(entry[0] + " / " + entry[1] + " / " + entry[2] + " / " + entry[3] + "\n")
+    print(entry)
 

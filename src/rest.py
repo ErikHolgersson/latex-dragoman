@@ -21,19 +21,33 @@ def query_deepl(lang, text):
 def _build_query_json(api, lang, text):
 	if(api=="deepl"):
 		key = os.getenv("DEEPL_KEY")
-		data = {	"auth_key": key,
-					"target_lang": lang,
-					"text": text }
-		return(data)	
+		data = []
+
+		data.append( ("auth_key", key) )
+		data.append( ("target_lang", lang) )
+
+		print("Text-Variable-Type: " + str(type(text)))
+		if type(text) is str:
+			data.append( ("text", text) )
+		
+		if type(text) is list:
+			for entry in text:
+				data.append( ("text", entry) )
+		
+		return(data)
 
 
 def _handle_response_json(api, response):
 	if(api=="deepl"):
 			json_response = response.json()
-			translation = json_response["translations"][0]["text"]
+			translation = []
+			for entry in json_response["translations"]:
+				translation.append(entry["text"])
 			return(translation)
 			
 
-#my_translation = query_deepl("EN", "Gesundheit ist ein Zustand des vollkommenen körperlichen, geistigen und sozialen Wohlbefindens"
-#					+" - und nicht die bloße Abwesenheit von Krankheit.")
-#print(my_translation)
+test_list= ["paranoid", "space caravan", "warpigs", "iron man"]
+mytext= _build_query_json("deepl", "DE", test_list)
+print(mytext)
+my_translation = query_deepl("DE", test_list)
+print(my_translation)
