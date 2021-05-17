@@ -1,4 +1,5 @@
-import json		
+#!/usr/bin/python3
+
 import requests
 import os
 # What to do?
@@ -45,9 +46,9 @@ def _handle_response_json(api, response):
 				translation.append(entry["text"])
 			return(translation)
 			
-
-test_list= ["paranoid", "space caravan", "warpigs", "iron man"]
-mytext= _build_query_json("deepl", "DE", test_list)
-print(mytext)
-my_translation = query_deepl("DE", test_list)
-print(my_translation)
+#
+#test_list= ["paranoid", "", "###", "war pigs", "iron man"]
+#mytext= _build_query_json("deepl", "DE", test_list)
+#print(mytext)
+#my_translation = query_deepl("DE", test_list)
+#print(my_translation)
