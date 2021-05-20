@@ -11,7 +11,7 @@ import os
 
 def query_deepl(lang, text):
 	url	= "https://api-free.deepl.com/v2/translate"
-	data=_build_query_json("deepl", lang, text)	
+	data=_build_query("deepl", lang, text)	
 
 	response = requests.get(url, data)
 
@@ -19,7 +19,7 @@ def query_deepl(lang, text):
 	return(translation)
 
 
-def _build_query_json(api, lang, text):
+def _build_query(api, lang, text):
 	if(api=="deepl"):
 		key = os.getenv("DEEPL_KEY")
 		data = []
