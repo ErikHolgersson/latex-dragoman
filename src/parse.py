@@ -67,9 +67,6 @@ def filter_params(ltx_list):
                 index_string += "***" + ltx_list[i][2] + " " + ltx_list[i][3]
                 i+=1
                 index_num += 1
-            print("Trying to append to index number " + str(starting_index))
-            print("Length of list is " + str(len(filtered_list)))
-            print("Trying to append the following message:\n+++\n" + index_string)
 
             filtered_list[starting_index][3] = str(filtered_list[starting_index][3]) + index_string
 
