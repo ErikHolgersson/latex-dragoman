@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.2.25)  13 JUN 2021 14:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.2.25)  13 JUN 2021 15:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -27,8 +27,8 @@ File: bk10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 (/usr/share/texlive/texmf-dist/tex/latex/comment/comment.sty
 \CommentStream=\write3
 
-Excluding comment 'comment') Include comment 'original'
-Excluding comment 'translated'
+Excluding comment 'comment') Include comment 'translated'
+Excluding comment 'original'
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks15
@@ -135,7 +135,7 @@ File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count188
 \l__pdf_internal_box=\box47
 )
-No file mergeddoc.aux.
+(./mergeddoc.aux)
 \openout1 = `mergeddoc.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
@@ -154,10 +154,406 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 18
 .
-(/usr/share/texlive/texmf-dist/tex/latex/lm/t1lmr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Including 'original' comment.
+Excluding 'original' comment. Including 'translated' comment.
+\openout3 = `comment.cut'.
+
+
+Straight input of comment.cut. (./comment.cut
+Chapter 1.
+) Excluding 'original' comment. Including 'translated' comment.
+\openout3 = `comment.cut'.
+
+
+Straight input of comment.cut. (./comment.cut
+Overfull \hbox (1.60439pt too wide) in paragraph at lines 1--1
+[]\T1/lmr/bx/n/14.4 intersymbol in-ter-fer-ence free pulse trans-mis-
+ []
+
+) Excluding 'original' comment. Including 'translated' comment.
+\openout3 = `comment.cut'.
+
+
+Straight input of comment.cut. (./comment.cut
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+4.
+
+(/usr/share/texlive/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+4.
+
+(/usr/share/texlive/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 4.
+
+! Undefined control sequence.
+l.7 ...um_{k=-\infty}^\infty d[k]\delta (t-kT) \Ko
+                                                  
+? 
+! Undefined control sequence.
+l.13   d[k]  \in \Pu
+                    
+? 
+
+! LaTeX Error: Not in outer par mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.17 \index{pulse shaping}\begin{figure}[hbt]
+                                             
+? 
+! Undefined control sequence.
+\@xfloat ...@fltovf \fi \global \setbox \@currbox 
+                                                  \color@vbox \normalcolor \...
+l.17 \index{pulse shaping}\begin{figure}[hbt]
+                                             
+? 
+! Missing number, treated as zero.
+<to be read again> 
+                   \color@vbox 
+l.17 \index{pulse shaping}\begin{figure}[hbt]
+                                             
+? 
+! Undefined control sequence.
+l.24          \psfragfig
+                        [trim={0 0.6cm 0 0.6cm},clip]{BB_System}
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.24 ...psfragfig[trim={0 0.6cm 0 0.6cm},clip]{BB_
+                                                  System}
+? 
+! Extra }, or forgotten $.
+l.24 ...ig[trim={0 0.6cm 0 0.6cm},clip]{BB_System}
+                                                  
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.25 ...es Datenübertragungssystems im Basisband}
+                                                  
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.25 ...es Datenübertragungssystems im Basisband}
+                                                  
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.29 
+     
+? 
+! Extra alignment tab has been changed to \cr.
+<template> }$\hfill \endtemplate 
+                                 
+l.36   \end{split}
+                  
+? 
+! Extra alignment tab has been changed to \cr.
+<template> }$\hfill \endtemplate 
+                                 
+l.36   \end{split}
+                  
+? 
+! Undefined control sequence.
+<argument> ...k=-\infty }^\infty d[k] g(t-kT) \Pu 
+                                                  \end {split}
+l.36   \end{split}
+                  
+? 
+! Extra alignment tab has been changed to \cr.
+<template> }$\hfill \endtemplate 
+                                 
+l.36   \end{split}
+                  
+? 
+! Extra alignment tab has been changed to \cr.
+<template> }$\hfill \endtemplate 
+                                 
+l.36   \end{split}
+                  
+? 
+! Undefined control sequence.
+<argument> ...k=-\infty }^\infty d[k] g(t-kT) \Pu 
+                                                  \end {split}
+l.36   \end{split}
+                  
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.39 
+     
+? 
+! Undefined control sequence.
+l.49 ...\S^2(t) \int_\infty^\infty |H_\S(f)|^2 \Pu
+                                                  
+? 
+[1
+
+
+{/usr/share/texlive/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}]
+
+! Package amsmath Error: \tilde allowed only in math mode.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.51 ...t the output of the receive filter\tilde n
+                                                  (t)$
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.52 
+     
+? 
+! Undefined control sequence.
+l.54   y(t)=x(t)+\tilde n(t)  \Pu
+                                 
+? 
+! Extra alignment tab has been changed to \cr.
+<template> }$\hfill \endtemplate 
+                                 
+l.65 \end{split}
+                
+? 
+! Extra alignment tab has been changed to \cr.
+<template> }$\hfill \endtemplate 
+                                 
+l.65 \end{split}
+                
+? 
+! Undefined control sequence.
+l.70   h(t)=h_\S(t)\ast h_\K
+                            (t) \ast h_\E(t) \Pu
+? 
+! Undefined control sequence.
+l.70   h(t)=h_\S(t)\ast h_\K(t) \ast h_\E
+                                         (t) \Pu
+? 
+! Undefined control sequence.
+l.70   h(t)=h_\S(t)\ast h_\K(t) \ast h_\E(t) \Pu
+                                                
+? 
+! Undefined control sequence.
+l.74 transfer functions $H_\S(f)$, $H_\K
+                                        (f)$ and $H_\E(f)$ for
+? 
+! Undefined control sequence.
+l.74 ...r functions $H_\S(f)$, $H_\K(f)$ and $H_\E
+                                                  (f)$ for
+? 
+! Undefined control sequence.
+l.78   \Fo
+           \S(f) H_\K(f) H_\E(f) \Pu
+? 
+! Undefined control sequence.
+l.78   \Fo \S(f) H_\K
+                     (f) H_\E(f) \Pu
+? 
+! Undefined control sequence.
+l.78   \Fo \S(f) H_\K(f) H_\E
+                             (f) \Pu
+? 
+! Undefined control sequence.
+l.78   \Fo \S(f) H_\K(f) H_\E(f) \Pu
+                                    
+? 
+! Undefined control sequence.
+l.83  (\tau)\Ko
+               
+? 
+! Undefined control sequence.
+l.88  \Phi_{nn}(f)=\Fo
+                       \phi_{nn}( \tau )\frac {N_0}{2}
+? 
+
+! Package amsmath Error: \hat allowed only in math mode.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.90 designated. The detector\hat d
+                                   [k]$ off. Wrong decisions are possible wi...
+
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.93 
+     
+? 
+
+Overfull \hbox (362.12161pt too wide) in paragraph at lines 89--93
+\T1/lmr/m/n/10 designated. The detector[k]$\OML/lmm/m/it/10 off:Wrongdecisionsa
+repossiblewiththegiventransfermodelaccordingtoFig:\OT1/lmr/m/n/10 1\OML/lmm/m/i
+t/10 :\OT1/lmr/m/n/10 1\OML/lmm/m/it/10 :\OT1/lmr/m/n/10 1[]\OML/lmm/m/it/10 po
+ssibleasaresultoflinearsignaldistortionandnoise:$ 
+ []
+
+) Excluding 'original' comment. Including 'translated' comment.
+\openout3 = `comment.cut'.
+
+
+Straight input of comment.cut. (./comment.cut
+
+LaTeX Warning: Reference `DT_ISI_frei' on page 2 undefined on input line 11.
+
+[2]
+! Undefined control sequence.
+l.15 h(t)=c \delta(t-t_0) \Ko
+                             
+? 
+! Extra alignment tab has been changed to \cr.
+<template> }$\hfill \endtemplate 
+                                 
+l.24 \end{split}
+                
+? 
+! Undefined control sequence.
+<argument> ...\ast x_1(t) \^^M&= c x_1(t-t_0) \Pu 
+                                                  \end {split}
+l.24 \end{split}
+                
+? 
+! Extra alignment tab has been changed to \cr.
+<template> }$\hfill \endtemplate 
+                                 
+l.24 \end{split}
+                
+? 
+! Undefined control sequence.
+<argument> ...\ast x_1(t) \^^M&= c x_1(t-t_0) \Pu 
+                                                  \end {split}
+l.24 \end{split}
+                
+? 
+! Undefined control sequence.
+l.31    \psfragfig
+                  [trim={0 0.8cm 0 0.6cm}]{DT_ISI_frei_HN_2}
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.31    \psfragfig[trim={0 0.8cm 0 0.6cm}]{DT_
+                                              ISI_frei_HN_2}
+? 
+! Extra }, or forgotten $.
+l.31 ...[trim={0 0.8cm 0 0.6cm}]{DT_ISI_frei_HN_2}
+                                                  
+? 
+! Missing $ inserted.
+<inserted text> 
+                $
+l.32 ...on{Verzerrungsfreies Übertragungssystems}
+                                                  
+? 
+! You can't use `\vadjust' in internal vertical mode.
+\end@float ...nalty \@floatpenalty \else \vadjust 
+                                                  {\penalty -\@Miv \vbox {}\...
+l.34 \end{figure}
+                 
+? 
+! Missing } inserted.
+<inserted text> 
+                }
+l.34 \end{figure}
+                 
+? 
+! Undefined control sequence.
+l.37  H(f) = \Fo
+                \int_{-\infty}^\infty h(t)\e^{-\j 2 \pi f t}\frac{X_2(f)}{X_...
+
+? 
+! Undefined control sequence.
+l.37  H(f) = \Fo\int_{-\infty}^\infty h(t)\e
+                                            ^{-\j 2 \pi f t}\frac{X_2(f)}{X_...
+
+? 
+
+LaTeX Warning: Command \j invalid in math mode on input line 37.
+
+
+LaTeX Warning: Command \j invalid in math mode on input line 37.
+
+! Undefined control sequence.
+l.37 ..._1(f)}=c \textrm{e}^{-\j 2 \pi f t_0}  \Pu
+                                                  
+? 
+! Undefined control sequence.
+l.43  |H(f)| = c \Ko
+                    
+? 
+! Undefined control sequence.
+l.49  \arg (H(f)) = - 2 \pi f t_0   \Pu
+                                       
+? 
+
+LaTeX Warning: Command \j invalid in math mode on input line 54.
+
+! Undefined control sequence.
+l.54  H(f) = \textrm{e}^{-(a(f)+\j b(f))}   \Pu
+                                               
+? 
+! Undefined control sequence.
+l.60   a(f) = - \ln |H(f)|= \textrm{const} \Ko
+                                              
+? 
+! Undefined control sequence.
+l.69   t_{\gr
+             }(f) = \frac{1}{2 \pi} \frac{d  b(f)}{ d f}=  t_0  \Pu
+? 
+! Undefined control sequence.
+l.69 ...{1}{2 \pi} \frac{d  b(f)}{ d f}=  t_0  \Pu
+                                                  
+? 
+
+! LaTeX Error: \begin{document} ended by \end{translated}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.71 ...rtions!linear distortions}\end{translated}
+                                                  
+? 
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.71 ...rtions!linear distortions}\end{translated}
+                                                  
+? 
+Excluding 'original' comment. Including 'translated' comment.
 \openout3 = `comment.cut'.
 
 )
@@ -165,40 +561,60 @@ Runaway argument?
 ! File ended while scanning use of \next.
 <inserted text> 
                 \par 
-<*> out/mergeddoc.tex
-                     
+l.438 \end{translated}
+                      
 ? 
-
-*q
-
-*q
-
-*\end
-
+)
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
+*
+(Please type a command or say `\end')
 *
 ! Interruption.
 <*> 
     
-? 
-(Please type a command or say `\end')
-*q
-! Interruption.
-<*> 
-    q
 ? q
 OK, entering \batchmode...
 ! Emergency stop.
-<*> q
-     
+<*> 
+    
 *** (job aborted, no legal \end found)
 
  
 Here is how much of TeX's memory you used:
- 1329 strings out of 482555
- 17161 string characters out of 5952145
- 245967 words of memory out of 5000000
- 17021 multiletter control sequences out of 15000+600000
- 536091 words of font info for 26 fonts, out of 8000000 for 9000
+ 1459 strings out of 482555
+ 19484 string characters out of 5952145
+ 250967 words of memory out of 5000000
+ 17109 multiletter control sequences out of 15000+600000
+ 584362 words of font info for 48 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 30i,1n,25p,596b,79s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,19n,25p,596b,191s stack positions out of 5000i,500n,10000p,200000b,80000s
 !  ==> Fatal error occurred, no output PDF file produced!

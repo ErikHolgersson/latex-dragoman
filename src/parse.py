@@ -44,7 +44,8 @@ def list_to_ltx(ltx_list):
             ltxstring += ltx_list[i][0] + ltx_list[i][1] + ltx_list[i][2] + ltx_list[i][3]
             i = i+1
     
-    ltxstring=str(ltxstring) + '###\end{document}'
+    ltxstring = str(ltxstring) + '###\end{document}'
+    ltxstring = ltxstring.replace('***', r'\index')
     ltxstring = ltxstring.replace('###','\n')
 
     return ltxstring
@@ -61,7 +62,7 @@ def filter_params(ltx_list):
         # keep all params that appear in the rendered document
         if(ltx_list[i][0] in keep):
             filtered_list.append(list(ltx_list[i]))
-        
+            i+=1
         # filter out equations, other environments may stay
         elif("begin" in ltx_list[i][0]) and (ltx_list[i][2] in delete_envs):
             # filter out all environments that dont need translating
@@ -74,13 +75,22 @@ def filter_params(ltx_list):
             while True:
                 if("end" in ltx_list[i][0] and tmp_env in ltx_list[i][2]):
                     break
+                
                 print("cleaning out environment, command: " + ltx_list[i][0])
                 filtered_list.append([ ltx_list[i][0], '', '', '' ])
+                
                 i = i+1
-            filtered_list.append([ ltx_list[i][0], '', '', ltx_list[i][3] ])
-        #only filter out params for all other fields.
-        else:
-            filtered_list.append([ ltx_list[i][0], '', '', ltx_list[i][3] ])
+            #filtered_list.append([ ltx_list[i][0], '', '', ltx_list[i][3] ])   
+    
+        index_num = 0
+        entry_cmd = ltx_list[i][0]
+        entry_str = ltx_list[i][3]
+        while (i < len(ltx_list)-1) and ("index" in ltx_list[i+1][0]):
+            entry_str += "***" + ltx_list[i+1][2] + " " + ltx_list[i+1][3]
+            i+=1
+            index_num += 1
+        filtered_list.append([ entry_cmd, '', '', entry_str ])
+        for num in range(0,index_num): filtered_list.append( ['###', ' ', ' ', ' '])
         i = i+1
         
     return filtered_list

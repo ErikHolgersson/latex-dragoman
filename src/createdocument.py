@@ -65,7 +65,7 @@ def merge_ltx_lists(orig_list, trans_list):
     #       regardless of language
     # 4. after encapsulating the blocks, merge both lists blockwise ({original} and {translated} alternate)
     
-    layout_cmds = { "\\author", "\\title" , "\\date", "\\chapter", "\\part", "\\section", "\\subsection",
+    layout_cmds = { "\\chapter", "\\part", "\\section", "\\subsection",
                 "\\subsubsection", "\\paragraph", "\\subparagraph"}
     
     ret_list=[]
@@ -84,7 +84,10 @@ def merge_ltx_lists(orig_list, trans_list):
 
     for line in range(0, len(trans_list)):
         for row in range(0,len(trans_list[line])):
-            if trans_list[line][row] == '':
+            if ("index" in trans_list[line][0]):
+                trans_list[line] =  [ '','','','' ]
+                break
+            elif trans_list[line][row] == '':
                 trans_list[line][row] = orig_list[line][row]
     
     while i < len(orig_list):
