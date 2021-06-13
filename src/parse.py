@@ -17,7 +17,7 @@ def ltxfile_to_list(filename):
     contentList = re.findall('(\\\[A-Za-z#]+)'
                             +'(\[.*\])?'
                             +'(\{.*\})?'
-                            +'(.*)?', content)
+                            +'(.*)', content)
 
     return contentList
 
