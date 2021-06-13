@@ -30,20 +30,9 @@ def list_to_ltx(ltx_list):
 
     i = 0
     ltxstring = ""
-    while( i < len(ltx_list)):
-        if("\\begin" in ltx_list[i][0] and ltx_list[i][2] in eq_envs):
-            ltxstring += "\n" + ltx_list[i][0] + ltx_list[i][1] + ltx_list[i][2] + ltx_list[i][3]
-            #print("Begin assembling the align-environment")
-            i = i+1
-            while("\\end" not in ltx_list[i][0]):
-                #print("End not found, found \"" + ltx_list[i][0] + "\" instead")
-                ltxstring += ltx_list[i][0].replace("\n","") + ltx_list[i][1] + ltx_list[i][2] + ltx_list[i][3].replace("\n","")
-                i = i+1
-            #print("end found.")
-        else:
-            ltxstring += ltx_list[i][0] + ltx_list[i][1] + ltx_list[i][2] + ltx_list[i][3]
-            i = i+1
-    
+
+    for line in ltx_list: ltxstring += line[0] + line[1] + line[2] + line[3]
+
     ltxstring = str(ltxstring)
     ltxstring = ltxstring.replace('***', r'\index')
     ltxstring = ltxstring.replace('###','\n')
