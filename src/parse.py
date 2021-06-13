@@ -3,8 +3,8 @@
 import re
 
 
-def ltxfile_to_list(filename):
-    with open(filename) as file:
+def ltxfile_to_list(filepath):
+    with open(filepath) as file:
         content = file.read()
 
     #Wordsplitting interferes with proper translation
