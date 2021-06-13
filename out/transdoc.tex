@@ -1,79 +1,144 @@
-
 \documentclass
 
-
-
 \usepackage
-
-
 \usepackage
-
-
 \usepackage
-
-%
+%\usepackage
 \usepackage
-
-
 \usepackage
-
-
 
 \title{A test document}
-
-
 \author
-
-
 \date{January 5, 2004}
-
-
 \begin
-
-
 
 \maketitle
 
+\chapter{transmission on baseband}\label
+\section[ISI-free pulse transmission]{intersymbol interference free pulse transmission}
+\subsection{transmission model}
 
-\tableofcontents
+The baseband data transmission system shall be replaced by the system shown in Fig
+.\ref The input signal $d(t)$ for the transmit filter can be described in the block diagram shown below.\index is a sequence of Dirac pulses
+\begin\sum\infty\infty\delta\Ko
+\end
+which are weighted by the discrete-time sequence $ATd[k]$, where $d[k]$ denote the data symbols of the source.
+For a binary transfer, for example,
+\begin\in\Pu
+\end
+The amplitude $A$ controls the power of the transmitted signal $u(t)$, the
+clock period\index $T$ is the transmission speed. The transmit filter
+with the impulse response $h_\S(t)$ forms the transmit signal 
+\index\index
+\begin\begin\leavevmode
+\epsfxsize\psfrag\tilde\psfrag\psfragfig\psfragfig\caption\label\end\end
+\begin\label\begin\ast\S\
+\Big\sum\infty\infty\delta\Big\ast\S\
+\sum\infty\infty\S\
+\sum\infty\infty\Pu
+\end\end
+The relationship between transmission pulse $g(t)$\index and impulse response of the transmit filter $h_\S(t)$ is given by the relation
+\begin\label\S\qquad\le\end
+given, where $T_g$ is the duration of the impulse $g(t)$ or the
+impulse response $h_\S(t)$ of the transmit filter. For the energy of the
+transmitting pulse applies
+\begin\label\mathcal\int\int\S\int\infty\infty\S\Pu
+\end
+The received signal at the output of the receive filter\index is denoted by $y(t)$
+and consists of the unfiltered useful signal $x(t)$ and
+the filtered noise signal\index $\tilde n(t)$
+\begin\label\tilde\Pu
+\end
+The unnoised received signal is calculated by convolving the
+input signal with the impulse response of the transmission system
+$h(t)$
+\begin\label\begin\ast\
+\Big\sum\infty\infty\delta\Big\ast\
+\sum\infty\infty\end\end
+mit
+\begin\label\S\ast\K\ast\E\Pu
+\end\
+Die Fourier transformed impulse response $h(t)$ yields the
+transfer function\index of the system $H(f)$, which can be calculated by multiplying the
+transfer functions $H_\S(f)$, $H_\K(f)$ and $H_\E(f)$ for
+transmission filter, transmission channel\index and receive filter results
+\begin\label\Fo\S\K\E\Pu
+\end
+Gaussian white noise $n(t)$ is additively superimposed on the useful signal $v(t)$ at the input of the receive filter. The abbreviation AWGN is used for this interference.\index (\emph) are commonly used. Their autocorrelation function\index\index (AKF) reads
+\begin\label\phi\tau\textrm\tau\frac\delta
+\tau\Ko
+\end
+where $N_0/2$ is the two-sided
+noise power density\index\index
+\begin\label\Phi\Fo\phi\tau\frac\end
+designated. The detector\index makes the decision about the sent symbols and returns the estimated symbols
+$ in the symbol clock.\hat d[k]$ off. Wrong decisions are possible with the given
+transfer model according to Fig.\ref possible as a result of linear
+signal distortion and noise.
 
 
-\section{introduction}
+\subsection{1st Nyquist criterion of data transmission}\label 
+\index 
+In this chapter, the influence of linear distortions on the transmitted signal is investigated,
+whereby noise is disregarded. First, the question
+shall be posed as to what requirements the impulse response $h(t)$, or 
+the transfer function $H(f)$, of a distortion-free
+transmission system must satisfy. Distortion-free transmission
+means that the signal shape of the transmitted signal is preserved.
+A proportional change of the signal (amplitude scaling) as well as a signal delay due
+to the finite propagation velocity of the electrical or 
+electromagnetic signals is allowed. Image\ref shows
+such a distortion-free transmission system. The impulse response of this transmission system is a delayed Dirac impulse
+.\begin\label\delta\Ko
+\end
+which is multiplied by the constant $c$. The output signal $x_2(t)$ is then calculated as
+\begin\begin\ast\nonumber\
+\delta\ast\
+\Pu
+\end\end
+The Fourier transform\index of this relation yields the corresponding demand on the transfer function $H(f)$
+\begin\centering
+\leavevmode
+\epsfxsize\epsfbox\psfragfig\caption\label\end
+\begin\label\Fo\int\infty\infty\e\j\pi\frac\textrm\j\pi\Pu
+\end
+The magnitude of the transfer function of a distortion-free system
+must be constant
+.\begin\label\Ko
+\end
+the argument of the transfer function is a linear function of the
+frequency
+.\begin\label\arg\pi\Pu
+\end
+The relationship between transfer function $H(f)$ and
+attenuation\index $a(f)$ and phase\index is
+$b(f)$
+\begin\label\textrm\j\Pu
+\end
+ From this follow the known conditions of a distortion-free
+transmission for attenuation
+.\begin\label\ln\textrm\Ko
+\end
+Phase
+\begin\label\arg\pi\end
+and group runtime\index
+\begin\label\gr\frac\pi\frac\Pu
+\end
+This means that if the attenuation of a transmission system is constant and the phase is linear, then all spectral components of the transmitted signal are attenuated and delayed equally, and the received signal remains undistorted. However, if these conditions are not met within the signal bandwidth, attenuation and phase distortions of the signal result. These distortions are referred to as\emph\index\index\index
+summarized. Linear distortions cause transients and therefore affect successive symbols. This phenomenon is called intersymbol interference (ISI).\index Designated.
 
 
-Here comes the introduction. Your heading comes
-automatically in the table of contents.
 
-
-\subsection{formulas}
-
-
-
-\LaTeX
- is very useful and
-easy to use even without formulas. Graphics, tables,
-cross-references of all kinds, bibliography and
-index are no problem.
-
-Formulas are a bit more difficult, yet here is a
-simple example. Two of Einstein's
-most famous formulas are:
-
-\begin
-
-\
-m
-
-\frac
-
-\sqrt
-
-\frac
-
+\paragraph{Example.} Image\ref shows how a rectangular pulse\index $x_1(t)$ of duration $T$ by an RC element with time constant $\tau = RC = T/2$ is distorted. The output pulse $x_2(t)$ spans more than two symbol periods $T$, causing ISI. Analysis shows that neither the damping nor the phase conditions for a distortion-free system are met. The transfer function is
+\begin\label\frac\frac\sqrt\pi\tau\textrm\j\arctan\pi\tau\Pu
+\end
+\begin\begin\leavevmode
+\epsfxsize\psfrag\psfrag\psfrag\epsfbox\psfragfig\caption\tau\label\end\end
+For the damping and phase, one obtains from this the relationships
+\begin\label
+ a( f ) & =\tfrac \cdot \ln \left(1 + (2\pi f\tau)^2\right)\Ko \
+  b(f) & =\arctan(2\pi f\tau)\Pu
 \end
 
-But if you don't write formulas, you don't need
-to bother with them.
-
 \end
-
+\end{document}

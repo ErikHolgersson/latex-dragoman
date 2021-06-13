@@ -1,35 +1,11 @@
-\documentclass{book}
-
-\usepackage{comment}
-%\includecomment{original}
-\includecomment{translated}
-%\excludecomment{translated}
-\excludecomment{original}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-%\usepackage[ngerman]{babel}
-\usepackage{amsmath}
-\usepackage{comment}
-
-\title{Ein Testdokument}
-\author{Otto Normalverbraucher}
-\date{5. Januar 2004}
-\begin{document}
-
-\begin{original}
 \chapter{Übertragung im Basisband}\label{sec:Basisband}
-\end{original}
-\begin{translated}
+\end{original}\begin{translated}
 \chapter{transmission on baseband}\label{sec:Basisband}
-\end{translated}
-\begin{original}
+\end{translated}\begin{original}
 \section[ISI-freie Impulsübertragung]{Intersymbolinterferenzfreie Impulsübertragung}
-\end{original}
-\begin{translated}
+\end{original}\begin{translated}
 \section[ISI-free pulse transmission]{intersymbol interference free pulse transmission}
-\end{translated}
-\begin{original}
+\end{translated}\begin{original}
 \subsection{Übertragungsmodell}
 
 Das Datenübertragungssystem im Basisband soll durch das in Bild
@@ -37,7 +13,7 @@ Das Datenübertragungssystem im Basisband soll durch das in Bild
 Das Eingangssignal $d(t)$ für das Sendefilter\index{Filter!Sendefilter} ist eine Folge von  Diracimpulsen
 
 \begin{equation*}
-  	d(t)=AT \sum_{k=-\infty}^\infty d[k]\delta (t-kT) \Ko
+   d(t)=AT \sum_{k=-\infty}^\infty d[k]\delta (t-kT) \Ko
 \end{equation*}
 die mit der zeitdiskreten Folge $ATd[k]$ gewichtet werden, wobei $d[k]$ die Datensymbole der Quelle bezeichnen.
 Für eine binäre Übertragung gilt z.B.
@@ -47,7 +23,7 @@ Für eine binäre Übertragung gilt z.B.
 \end{equation*}
 Die Amplitude $A$ regelt die Leistung des Sendesignals $u(t)$, die
 Taktperiode\index{Taktperiode} $T$ die Übertragungsgeschwindigkeit. Das Sendefilter
-mit der Impulsantwort $h_\S(t)$ formt das Sendesignal 
+mit der Impulsantwort $h_\S(t)$ formt das Sendesignal
 \index{Impulsformung}\index{Impulsantwort}
 \begin{figure}[hbt]
    \begin{center}
@@ -63,10 +39,10 @@ mit der Impulsantwort $h_\S(t)$ formt das Sendesignal
 \end{figure}
 
 \begin{equation}\label{eq_2_1_1}
-	\begin{split}
+\begin{split}
     u(t) &=   d(t) \ast h_\S(t) \
-         &=\Big ( AT \sum_{k=-\infty}^\infty d[k]\delta (t-kT) \Big ) 							\ast h_\S(t) \
-    		 &= AT \sum_{k=-\infty}^\infty d[k]  h_\S(t-kT) \
+         &=\Big ( AT \sum_{k=-\infty}^\infty d[k]\delta (t-kT) \Big )  \ast h_\S(t) \
+      &= AT \sum_{k=-\infty}^\infty d[k]  h_\S(t-kT) \
          &= \sum_{k=-\infty}^\infty d[k] g(t-kT) \Pu
   \end{split}
 \end{equation}
@@ -95,11 +71,11 @@ Eingangssignals mit der Impulsantwort des Übertragungssystems
 $h(t)$
 
 \begin{equation}\label{eq_2_1_5}
-	\begin{split}
+\begin{split}
   x(t) &= d(t) \ast h(t) \
   &=\Big (AT \sum_{k=-\infty}^\infty d[k] \delta(t-kT) \Big ) \ast h(t)\
       &= AT \sum_{k=-\infty}^\infty d[k] h(t-kT)
-	\end{split}
+\end{split}
 \end{equation}
 mit
 
@@ -132,15 +108,14 @@ $\hat d[k]$ aus. Fehlentscheidungen sind bei dem gegebenen
 Signalverzerrungen und des Rauschens möglich.
 
 
-\end{original}
-\begin{translated}
+\end{original}\begin{translated}
 \subsection{transmission model}
 
 The baseband data transmission system shall be replaced by the system shown in Fig
 .\ref{DT_system_HN} The input signal $d(t)$ for the transmit filter can be described in the block diagram shown below.\index{Filter!Sendefilter} is a sequence of Dirac pulses
 
 \begin{equation*}
-  	d(t)=AT \sum_{k=-\infty}^\infty d[k]\delta (t-kT) \Ko
+   d(t)=AT \sum_{k=-\infty}^\infty d[k]\delta (t-kT) \Ko
 \end{equation*}
 which are weighted by the discrete-time sequence $ATd[k]$, where $d[k]$ denote the data symbols of the source.
 For a binary transfer, for example,
@@ -150,7 +125,7 @@ For a binary transfer, for example,
 \end{equation*}
 The amplitude $A$ controls the power of the transmitted signal $u(t)$, the
 clock period\index{Taktperiode} $T$ is the transmission speed. The transmit filter
-with the impulse response $h_\S(t)$ forms the transmit signal 
+with the impulse response $h_\S(t)$ forms the transmit signal
 \index{Impulsformung}\index{Impulsantwort}
 \begin{figure}[hbt]
    \begin{center}
@@ -166,10 +141,10 @@ with the impulse response $h_\S(t)$ forms the transmit signal
 \end{figure}
 
 \begin{equation}\label{eq_2_1_1}
-	\begin{split}
+\begin{split}
     u(t) &=   d(t) \ast h_\S(t) \
-         &=\Big ( AT \sum_{k=-\infty}^\infty d[k]\delta (t-kT) \Big ) 							\ast h_\S(t) \
-    		 &= AT \sum_{k=-\infty}^\infty d[k]  h_\S(t-kT) \
+         &=\Big ( AT \sum_{k=-\infty}^\infty d[k]\delta (t-kT) \Big )  \ast h_\S(t) \
+      &= AT \sum_{k=-\infty}^\infty d[k]  h_\S(t-kT) \
          &= \sum_{k=-\infty}^\infty d[k] g(t-kT) \Pu
   \end{split}
 \end{equation}
@@ -198,11 +173,11 @@ input signal with the impulse response of the transmission system
 $h(t)$
 
 \begin{equation}\label{eq_2_1_5}
-	\begin{split}
+\begin{split}
   x(t) &= d(t) \ast h(t) \
   &=\Big (AT \sum_{k=-\infty}^\infty d[k] \delta(t-kT) \Big ) \ast h(t)\
       &= AT \sum_{k=-\infty}^\infty d[k] h(t-kT)
-	\end{split}
+\end{split}
 \end{equation}
 mit
 
@@ -235,10 +210,9 @@ transfer model according to Fig.\ref{DT_system_HN} possible as a result of linea
 signal distortion and noise.
 
 
-\end{translated}
-\begin{original}
-\subsection{1. Nyquistkriterium der Datenübertragung}\label{sec:Nyquist1} 
-\index{Nyquistkriterium!Nyquistkriterium@1. Nyquistkriterium|(} 
+\end{translated}\begin{original}
+\subsection{1. Nyquistkriterium der Datenübertragung}\label{sec:Nyquist1}
+\index{Nyquistkriterium!Nyquistkriterium@1. Nyquistkriterium|(}
 In diesem Kapitel wird der Einfluss der linearen Verzerrungen auf das Sendesignal untersucht,
 wobei das Rauschen unbeachtet bleibt. Zunächst soll die Frage
 gestellt werden, welche Forderungen die Impulsantwort $h(t)$ bzw.
@@ -251,16 +225,16 @@ elektromagnetischen Signale. Bild \ref{DT_ISI_frei} zeigt ein
 solches verzerrungsfreies Übertragungssystem. Die Impulsantwort dieses Übertragungssystems ist ein verzögerter Diracimpuls
 
 \begin{equation}\label{eq_2_1_10}
-	h(t)=c \delta(t-t_0) \Ko
+h(t)=c \delta(t-t_0) \Ko
 \end{equation}
 der mit der Konstanten $c$ multipliziert ist. Das Ausgangssignal $x_2(t)$ berechnet sich dann zu
 
 \begin{equation}
-	\begin{split}
-		x_2(t)&= h(t) \ast x_1(t) \nonumber\
-		      &= c \delta(t-t_0) \ast x_1(t) \
-		      &= c x_1(t-t_0) \Pu
-	\end{split}
+\begin{split}
+x_2(t)&= h(t) \ast x_1(t) \nonumber\
+      &= c \delta(t-t_0) \ast x_1(t) \
+      &= c x_1(t-t_0) \Pu
+\end{split}
 \end{equation}
 Die Fouriertransformation\index{Fouriertransformation} dieser Beziehung liefert die entsprechende Forderung an die Übertragungsfunktion $H(f)$
 \begin{figure}[t]
@@ -316,32 +290,31 @@ zusammengefasst. Lineare Verzerrungen verursachen Einschwingvorgänge und beeinf
 
 
 
-\end{original}
-\begin{translated}
-\subsection{1st Nyquist criterion of data transmission}\label{sec:Nyquist1} 
-\index{Nyquistkriterium!Nyquistkriterium@1. Nyquistkriterium|(} 
+\end{original}\begin{translated}
+\subsection{1st Nyquist criterion of data transmission}\label{sec:Nyquist1}
+\index{Nyquistkriterium!Nyquistkriterium@1. Nyquistkriterium|(}
 In this chapter, the influence of linear distortions on the transmitted signal is investigated,
 whereby noise is disregarded. First, the question
-shall be posed as to what requirements the impulse response $h(t)$, or 
+shall be posed as to what requirements the impulse response $h(t)$, or
 the transfer function $H(f)$, of a distortion-free
 transmission system must satisfy. Distortion-free transmission
 means that the signal shape of the transmitted signal is preserved.
 A proportional change of the signal (amplitude scaling) as well as a signal delay due
-to the finite propagation velocity of the electrical or 
+to the finite propagation velocity of the electrical or
 electromagnetic signals is allowed. Image\ref{DT_ISI_frei} shows
 such a distortion-free transmission system. The impulse response of this transmission system is a delayed Dirac impulse
 .
 \begin{equation}\label{eq_2_1_10}
-	h(t)=c \delta(t-t_0) \Ko
+h(t)=c \delta(t-t_0) \Ko
 \end{equation}
 which is multiplied by the constant $c$. The output signal $x_2(t)$ is then calculated as
 
 \begin{equation}
-	\begin{split}
-		x_2(t)&= h(t) \ast x_1(t) \nonumber\
-		      &= c \delta(t-t_0) \ast x_1(t) \
-		      &= c x_1(t-t_0) \Pu
-	\end{split}
+\begin{split}
+x_2(t)&= h(t) \ast x_1(t) \nonumber\
+      &= c \delta(t-t_0) \ast x_1(t) \
+      &= c x_1(t-t_0) \Pu
+\end{split}
 \end{equation}
 The Fourier transform\index{Fouriertransformation} of this relation yields the corresponding demand on the transfer function $H(f)$
 \begin{figure}[t]
@@ -397,8 +370,7 @@ summarized. Linear distortions cause transients and therefore affect successive 
 
 
 
-\end{translated}
-\begin{original}
+\end{translated}\begin{original}
 \paragraph{Beispiel:} Bild \ref{RC_HN} zeigt wie ein Rechteckimpuls\index{Rechteckimpuls|see{Impuls}} $x_1(t)$ der Dauer $T$ durch ein RC-Glied mit der Zeitkonstanten $\tau = RC = T/2$ verzerrt wird. Der Ausgangsimpuls $x_2(t)$ erstreckt sich über mehr als zwei Symbolperioden $T$ und verursacht damit ISI. Eine Analyse zeigt, dass weder die Dämpfungs- noch die Phasenbedingungen für ein verzerrungsfreies System eingehalten werden. Die Übertragungsfunktion beträgt
 
 \begin{equation*}\label{eq_2_1_18}
@@ -411,7 +383,7 @@ summarized. Linear distortions cause transients and therefore affect successive 
          %\epsfxsize=12cm
          \psfrag{A}[cc][cc][1.0]{$t/T$}
          \psfrag{B}[cc][cc][1.0]{$x_1(t)$}
-         \psfrag{D}[cc][cc][1.0]{$x_2(t)$}         
+         \psfrag{D}[cc][cc][1.0]{$x_2(t)$}
          %\epsfbox{RC_frag_HN.eps}
          \psfragfig[trim={0 0.8cm 0 0.8cm}]{RC_frag_HN}
          \caption{Verzerrung eines Rechteckimpulses durch ein RC-Glied ($\tau = T/2$)}
@@ -424,8 +396,7 @@ Für die Dämpfung und Phase erhält man daraus die Beziehungen
   b(f)   & = \arctan(2 \pi f \tau)  \Pu
 \end{align*}
 
-\end{original}
-\begin{translated}
+\end{original}\begin{translated}
 \paragraph{Example.} Image\ref{RC_HN} shows how a rectangular pulse\index{Rechteckimpuls|see{Impuls}} $x_1(t)$ of duration $T$ by an RC element with time constant $\tau = RC = T/2$ is distorted. The output pulse $x_2(t)$ spans more than two symbol periods $T$, causing ISI. Analysis shows that neither the damping nor the phase conditions for a distortion-free system are met. The transfer function is
 
 \begin{equation*}\label{eq_2_1_18}
@@ -438,7 +409,7 @@ Für die Dämpfung und Phase erhält man daraus die Beziehungen
          %\epsfxsize=12cm
          \psfrag{A}[cc][cc][1.0]{$t/T$}
          \psfrag{B}[cc][cc][1.0]{$x_1(t)$}
-         \psfrag{D}[cc][cc][1.0]{$x_2(t)$}         
+         \psfrag{D}[cc][cc][1.0]{$x_2(t)$}
          %\epsfbox{RC_frag_HN.eps}
          \psfragfig[trim={0 0.8cm 0 0.8cm}]{RC_frag_HN}
          \caption{Verzerrung eines Rechteckimpulses durch ein RC-Glied ($\tau = T/2$)}
@@ -452,5 +423,3 @@ For the damping and phase, one obtains from this the relationships
 \end{align*}
 
 \end{translated}
-
-\end{document}

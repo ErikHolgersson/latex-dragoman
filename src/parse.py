@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-import sys
 import re
 
 
@@ -8,9 +7,11 @@ def ltxfile_to_list(filename):
     with open(filename) as file:
         content = file.read()
 
+    #Wordsplitting interferes with proper translation
+    content = content.replace('\\-','')
     content = content.replace('\n', "###")
     content = content.replace('\\','\n\\')
-    #print("CONTENT:\n" + str(content)+"\n##################")
+    
 
 
     contentList = re.findall('(\\\[A-Za-z#]+)'
@@ -25,23 +26,25 @@ def list_to_ltx(ltx_list):
         print("Given ltx_list isn't 4 elements wide, cannot be assembled to a LaTeX-string")
         return
 
+    eq_envs = { "{align}" , "{equation}", "{equation*}"}
+
     i = 0
     ltxstring = ""
     while( i < len(ltx_list)):
-        if("\\begin" in ltx_list[i][0] and "align" in ltx_list[i][2]):
-            ltxstring += "\n" + ltx_list[i][0] + ltx_list[i][1] + ltx_list[i][2] + "\n" + ltx_list[i][3] + "\n"
-            print("Begin assembling the align-environment")
+        if("\\begin" in ltx_list[i][0] and ltx_list[i][2] in eq_envs):
+            ltxstring += "\n" + ltx_list[i][0] + ltx_list[i][1] + ltx_list[i][2] + ltx_list[i][3]
+            #print("Begin assembling the align-environment")
             i = i+1
             while("\\end" not in ltx_list[i][0]):
-                print("End not found, found \"" + ltx_list[i][0] + "\" instead")
+                #print("End not found, found \"" + ltx_list[i][0] + "\" instead")
                 ltxstring += ltx_list[i][0].replace("\n","") + ltx_list[i][1] + ltx_list[i][2] + ltx_list[i][3].replace("\n","")
                 i = i+1
-            print("end found.")
+            #print("end found.")
         else:
-            ltxstring += "###" + ltx_list[i][0] + ltx_list[i][1] + ltx_list[i][2] + "###" + ltx_list[i][3]
+            ltxstring += ltx_list[i][0] + ltx_list[i][1] + ltx_list[i][2] + ltx_list[i][3]
             i = i+1
     
-    ltxstring=str(ltxstring)
+    ltxstring=str(ltxstring) + '###\end{document}'
     ltxstring = ltxstring.replace('###','\n')
 
     return ltxstring
@@ -49,7 +52,7 @@ def list_to_ltx(ltx_list):
 def filter_params(ltx_list):
     keep = { "\\title" , "\\date", "\\chapter", "\\part", "\\section", "\\subsection",
                 "\\subsubsection", "\\paragraph", "\\subparagraph"}
-    delete = { "\\begin" }
+    delete_envs = { "{align}" , "{equation}", "{equation*}", "{figure}"}
 
     filtered_list = list()
     
@@ -60,9 +63,18 @@ def filter_params(ltx_list):
             filtered_list.append(list(ltx_list[i]))
         
         # filter out equations, other environments may stay
-        elif("begin" in ltx_list[i][0] and "align" in ltx_list[i][2]):
-            # filter out all equation strings in the align environment
-            while("end" not in ltx_list[i][0]):
+        elif("begin" in ltx_list[i][0]) and (ltx_list[i][2] in delete_envs):
+            # filter out all environments that dont need translating
+
+            tmp_env=ltx_list[i][2]
+            print("Found Environment to clear: " + tmp_env)
+
+            filtered_list.append([ ltx_list[i][0], '', '', '' ])
+            i = i+1
+            while True:
+                if("end" in ltx_list[i][0] and tmp_env in ltx_list[i][2]):
+                    break
+                print("cleaning out environment, command: " + ltx_list[i][0])
                 filtered_list.append([ ltx_list[i][0], '', '', '' ])
                 i = i+1
             filtered_list.append([ ltx_list[i][0], '', '', ltx_list[i][3] ])

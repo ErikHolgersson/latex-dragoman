@@ -13,7 +13,8 @@ def query_deepl(lang, text):
 	url	= "https://api-free.deepl.com/v2/translate"
 	data=_build_query("deepl", lang, text)	
 
-	response = requests.get(url, data)
+	#response = requests.post(url, data)
+	response = requests.post(url, data)
 
 	translation = _handle_response_json("deepl", response)
 	return(translation)

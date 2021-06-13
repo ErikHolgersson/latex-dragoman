@@ -41,24 +41,82 @@ def list1d_to_list2d(width, list1d):
 
     return list2d
 
-def merge_ltx_lists(orig_list, trans_list):
-    merged_list=[]
+#def merge_ltx_lists(orig_list, trans_list):
+#    merged_list=[]
+#
+#    if len(orig_list) == len(trans_list) and len(orig_list[0]) == len(trans_list[0]):
+#        for i in range(0,len(orig_list)):
+#            ltx_command =orig_list[i][0]
+#            opt_params  =orig_list[i][1] if trans_list[i][1] == '' else str(orig_list[i][1]).replace("]","") + " / " + str(trans_list[i][1]).replace("[","")
+#            nec_params  =orig_list[i][2] if trans_list[i][2] == '' else str(orig_list[i][2]).replace("}","") + " / " + str(trans_list[i][2]).replace("{","")
+#            text        =str(orig_list[i][3]) + "\n" + str(trans_list[i][3]) 
+#            merged_list.append( [ ltx_command, opt_params, nec_params, text ] )
+#        
+#    else:
+#        print("Original list and translated list do not have the same dimensions, cannot merge.")
+#    return merged_list
 
-    if len(orig_list) == len(trans_list) and len(orig_list[0]) == len(trans_list[0]):
-        for i in range(0,len(orig_list)):
-            ltx_command =orig_list[i][0]
-            opt_params  =orig_list[i][1] if trans_list[i][1] == '' else str(orig_list[i][1]).replace("]","") + " / " + str(trans_list[i][1]).replace("[","")
-            nec_params  =orig_list[i][2] if trans_list[i][2] == '' else str(orig_list[i][2]).replace("}","") + " / " + str(trans_list[i][2]).replace("{","")
-            text        =str(orig_list[i][3]) + "\n" + str(trans_list[i][3]) 
-            merged_list.append( [ ltx_command, opt_params, nec_params, text ] )
-        
-    else:
-        print("Original list and translated list do not have the same dimensions, cannot merge.")
-    return merged_list
+def merge_ltx_lists(orig_list, trans_list):
+    #what do?:
+    # 0. add "comment"-Package to document to handle language environments
+    # 1. iterate over orig_list and find layout-blocks like chapters
+    # 2. encapsulate full layout-block for original and for translated list in \begin{original | translated}
+    # 3. handle \begin{align} etc. because they dont need to be present in both lists, they'll be in the doc
+    #       regardless of language
+    # 4. after encapsulating the blocks, merge both lists blockwise ({original} and {translated} alternate)
+    
+    layout_cmds = { "\\author", "\\title" , "\\date", "\\chapter", "\\part", "\\section", "\\subsection",
+                "\\subsubsection", "\\paragraph", "\\subparagraph"}
+    
+    ret_list=[]
+
+    i=0
+    while(True):
+        ret_list.append(orig_list[i])
+        if "documentclass" in orig_list[i][0]:
+            ret_list.append(('\\usepackage','',r'{comment}','###'))
+            ret_list.append(('\\includecomment','',r'{original}',r'###%\includecomment{translated}###'))
+            ret_list.append(('\\excludecomment','',r'{translated}',r'###%\excludecomment{original}###'))
+        if "begin" in orig_list[i][0]:
+            i += 1
+            break
+        i+=1
+
+    for line in range(0, len(trans_list)):
+        for row in range(0,len(trans_list[line])):
+            if trans_list[line][row] == '':
+                trans_list[line][row] = orig_list[line][row]
+    
+    while i < len(orig_list):
+        if orig_list[i][0] in layout_cmds:
+            tmp_orig_list=[]
+            tmp_trans_list=[]
+
+            tmp_orig_list.append(('\\begin','',r'{original}','###'))
+            tmp_orig_list.append(orig_list[i])
+            tmp_trans_list.append(('\\begin','',r'{translated}','###'))
+            tmp_trans_list.append(trans_list[i])
+
+            i+=1
+            while(True):
+                if(orig_list[i][0] in layout_cmds) or ("end" in orig_list[i][0] and "document" in orig_list[i][2]):
+                    tmp_orig_list.append(('\\end','',r'{original}','###'))
+                    tmp_trans_list.append(('\\end','',r'{translated}','###'))
+                    
+                    for elem in tmp_orig_list: ret_list.append(elem)
+                    for elem in tmp_trans_list: ret_list.append(elem    )
+                    break
+                else:
+                    tmp_orig_list.append(orig_list[i])
+                    tmp_trans_list.append(trans_list[i])
+                    i +=1
+        else:
+            i+=1
+    return ret_list
 
 os.system("rm out/*")
 
-orig_list=parse.ltxfile_to_list("/home/erikhw/latex-dragoman/in/sample.tex")
+orig_list=parse.ltxfile_to_list("/home/erikhw/latex-dragoman/in/book.tex")
 with open("out/origlist.txt","x") as f:
     for line in orig_list:
         f.write(str(line)+"\n")
@@ -91,6 +149,8 @@ for i in range(0,len(translated_list2d)):
 with open("out/trans_doc_list2d.txt", "x") as f:
     for line in trans_doc_list2d:
         f.write(str(line) +"\n")
+
+
 
 
 transdoc=str(parse.list_to_ltx(trans_doc_list2d))
