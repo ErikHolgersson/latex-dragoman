@@ -1,4 +1,4 @@
-\paragraph{Example.} Image\ref{RC_HN} shows how a rectangular pulse\index{rectangular pulse|see{pulse}} $x_1(t)$ of duration $T$ is passed through an RC element with time constant $\tau = RC = T/2$ is distorted. The output pulse $x_2(t)$ spans more than two symbol periods $T$, causing ISI. Analysis shows that neither the damping nor the phase conditions for a distortion-free system are met. The transfer function is
+\paragraph{Beispiel:} Bild \ref{RC_HN} zeigt wie ein Rechteckimpuls\index{Rechteckimpuls|see{Impuls}} $x_1(t)$ der Dauer $T$ durch ein RC-Glied mit der Zeitkonstanten $\tau = RC = T/2$ verzerrt wird. Der Ausgangsimpuls $x_2(t)$ erstreckt sich über mehr als zwei Symbolperioden $T$ und verursacht damit ISI. Eine Analyse zeigt, dass weder die Dämpfungs- noch die Phasenbedingungen für ein verzerrungsfreies System eingehalten werden. Die Übertragungsfunktion beträgt
 
 \begin{equation*}\label{eq_2_1_18}
  H(f) = \frac{X_2(f)}{X_1(f)}=\frac{1}{\sqrt{1+(2 \pi f \tau)^2}} \textrm{e}^{-\j \arctan (2 \pi f \tau)}
@@ -17,9 +17,9 @@
       \label{RC_HN}
    \end{center}
 \end{figure}
-For the damping and phase, one obtains from this the relationships
+Für die Dämpfung und Phase erhält man daraus die Beziehungen
 \begin{align*}\label{eq_2_1_19}
- a( f ) & =\tfrac{1}{2} \cdot \ln \left(1 + (2\pi f\tau)^2\right)\Ko \
-  b(f) & =\arctan(2\pi f\tau)\Pu
+  a( f ) & =  \tfrac{1}{2} \cdot \ln \left(1 + (2 \pi f \tau)^2\right) \Ko \
+  b(f)   & = \arctan(2 \pi f \tau)  \Pu
 \end{align*}
 

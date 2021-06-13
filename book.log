@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.2.25)  13 JUN 2021 15:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.2.25)  13 JUN 2021 16:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -134,7 +134,7 @@ File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count188
 \l__pdf_internal_box=\box47
 )
-No file book.aux.
+(./book.aux)
 \openout1 = `book.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
@@ -153,7 +153,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 13
 .
-(/usr/share/texlive/texmf-dist/tex/latex/lm/t1lmr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
@@ -198,9 +198,6 @@ Overfull \hbox (23.06633pt too wide) in paragraph at lines 18--18
 []\T1/lmr/bx/n/14.4 Intersymbolinterferenzfreie Im-pul-süber-tra-gung 
  []
 
-
-LaTeX Warning: Reference `DT_system_HN' on page 3 undefined on input line 22.
-
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 23.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -208,9 +205,9 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 23.
 
-Overfull \hbox (4.2492pt too wide) in paragraph at lines 21--24
+Overfull \hbox (13.94373pt too wide) in paragraph at lines 21--24
 \T1/lmr/m/n/10 Das Datenüber-tra-gungssys-tem im Ba-sis-band soll durch das in 
-Bild [] dargestellte
+Bild 1.1.1[] dargestellte
  []
 
 ! Undefined control sequence.
@@ -329,12 +326,6 @@ l.102  \Phi_{nn}(f)=\Fo
                         \{ \phi_{nn}( \tau )\}=\frac {N_0}{2}
 ? 
 [4]
-
-LaTeX Warning: Reference `DT_system_HN' on page 5 undefined on input line 106.
-
-
-LaTeX Warning: Reference `DT_ISI_frei' on page 5 undefined on input line 120.
-
 ! Undefined control sequence.
 l.123 	h(t)=c \delta(t-t_0) \Ko
                                
@@ -518,20 +509,17 @@ l.204 \end{document}
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 1464 strings out of 482555
- 19463 string characters out of 5952145
+ 1466 strings out of 482555
+ 19481 string characters out of 5952145
  251824 words of memory out of 5000000
  17116 multiletter control sequences out of 15000+600000
  598178 words of font info for 58 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  30i,19n,25p,593b,194s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texli
-ve/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texlive/texmf-dist/fonts
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texli
+ve/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texlive/texmf-dist/fonts
 /enc/dvips/lm/lm-mathit.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/l
 m-mathsy.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}</
 usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texli
@@ -546,7 +534,7 @@ ic/lm/lmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmr5.pfb><
 e/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/lm/lmro10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
 c/lm/lmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
-Output written on book.pdf (6 pages, 250518 bytes).
+Output written on book.pdf (6 pages, 250474 bytes).
 PDF statistics:
  90 PDF objects out of 1000 (max. 8388607)
  66 compressed objects within 1 object stream
