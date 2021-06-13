@@ -44,7 +44,7 @@ def list_to_ltx(ltx_list):
             ltxstring += ltx_list[i][0] + ltx_list[i][1] + ltx_list[i][2] + ltx_list[i][3]
             i = i+1
     
-    ltxstring = str(ltxstring) + '###\end{document}'
+    ltxstring = str(ltxstring)
     ltxstring = ltxstring.replace('***', r'\index')
     ltxstring = ltxstring.replace('###','\n')
 

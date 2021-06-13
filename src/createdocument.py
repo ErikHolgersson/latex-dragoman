@@ -114,12 +114,13 @@ def merge_ltx_lists(orig_list, trans_list):
                     tmp_trans_list.append(trans_list[i])
                     i +=1
         else:
+            ret_list.append(orig_list[i])
             i+=1
     return ret_list
 
 os.system("rm out/*")
 
-orig_list=parse.ltxfile_to_list("/home/erikhw/latex-dragoman/in/book.tex")
+orig_list=parse.ltxfile_to_list("in/book.tex")
 with open("out/origlist.txt","x") as f:
     for line in orig_list:
         f.write(str(line)+"\n")
