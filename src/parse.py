@@ -59,8 +59,23 @@ def filter_params(ltx_list):
     
     i = 0
     while(i < len(ltx_list)):
+        if("index" in ltx_list[i][0]):
+            starting_index = i - 1
+            index_num = 0
+            index_string = ""
+            while ("index" in ltx_list[i][0]):
+                index_string += "***" + ltx_list[i][2] + " " + ltx_list[i][3]
+                i+=1
+                index_num += 1
+            print("Trying to append to index number " + str(starting_index))
+            print("Length of list is " + str(len(filtered_list)))
+            print("Trying to append the following message:\n+++\n" + index_string)
+
+            filtered_list[starting_index][3] = str(filtered_list[starting_index][3]) + index_string
+
+            for num in range(0,index_num): filtered_list.append( ['###','','',''] )
         # keep all params that appear in the rendered document
-        if(ltx_list[i][0] in keep):
+        elif(ltx_list[i][0] in keep):
             filtered_list.append(list(ltx_list[i]))
             i+=1
         # filter out equations, other environments may stay
@@ -81,17 +96,7 @@ def filter_params(ltx_list):
                 
                 i = i+1
             #filtered_list.append([ ltx_list[i][0], '', '', ltx_list[i][3] ])   
-        elif((i < len(ltx_list)-1) and ("index" in ltx_list[i+1][0])):
-            index_num = 0
-            entry_cmd = ltx_list[i][0]
-            entry_str = ltx_list[i][3]
-            while (i < len(ltx_list)-1) and ("index" in ltx_list[i+1][0]):
-                entry_str += "***" + ltx_list[i+1][2] + " " + ltx_list[i+1][3]
-                i+=1
-                index_num += 1
-            filtered_list.append([ entry_cmd, '', '', entry_str ])
-            for num in range(0,index_num): filtered_list.append( ['###', ' ', ' ', ' '])
-            i+=1
+        
         else:
             filtered_list.append( [ltx_list[i][0], '','',ltx_list[i][3]] )
             i = i+1
@@ -99,7 +104,12 @@ def filter_params(ltx_list):
     return filtered_list
 
 
-#orig_list = ltxfile_to_list(sys.argv[1])
+#orig_list = ltxfile_to_list("in/book.tex")
 #trans_list = orig_list.copy()
 #
-#print(list_to_ltx(trans_list))
+#filteredlist = filter_params(trans_list)
+#i = 0
+#for elem in filteredlist:
+#    i += 1
+#    print( str(i) + ":" + str(elem))
+#    
