@@ -25,10 +25,6 @@ def list_to_ltx(ltx_list):
     if len(ltx_list[1]) != 4:
         print("Given ltx_list isn't 4 elements wide, cannot be assembled to a LaTeX-string")
         return
-
-    eq_envs = { "{align}" , "{equation}", "{equation*}"}
-
-    i = 0
     ltxstring = ""
 
     for line in ltx_list: ltxstring += line[0] + line[1] + line[2] + line[3]
