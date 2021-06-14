@@ -11,6 +11,7 @@
 import parse
 import rest
 import os
+import sys
 
 def delete_first_column(list2d):
     cut_list=[]
@@ -120,7 +121,9 @@ def merge_ltx_lists(orig_list, trans_list):
 
 os.system("rm out/*")
 
-orig_list=parse.ltxfile_to_list("in/book.tex")
+filepath = sys.argv[1]
+
+orig_list=parse.ltxfile_to_list(filepath)
 with open("out/origlist.txt","x") as f:
     for line in orig_list:
         f.write(str(line)+"\n")
