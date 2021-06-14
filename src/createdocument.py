@@ -72,7 +72,7 @@ def merge_ltx_lists(orig_list, trans_list):
     ret_list=[]
 
     i=0
-    while("begin" not in orig_list[i][0]:):
+    while("begin" not in orig_list[i][0]):
         ret_list.append(orig_list[i])
         if "documentclass" in orig_list[i][0]:
             ret_list.append(('\\usepackage','',r'{comment}','###'))
@@ -100,7 +100,7 @@ def merge_ltx_lists(orig_list, trans_list):
 
             i+=1
             while(True):
-                if(orig_list[i][0] in layout_cmds) or ("end" in orig_list[i][0] and "document" in orig_list[i][2]):
+                if(orig_list[i][0] in layout_cmds) or ("end" in orig_list[i][0]) or ("begin" in orig_list[i][0]):
                     tmp_orig_list.append(('\\end','',r'{original}','###'))
                     tmp_trans_list.append(('\\end','',r'{translated}','###'))
                     
