@@ -58,7 +58,7 @@ def list1d_to_list2d(width, list1d):
 #    return merged_list
 
 def merge_ltx_lists(orig_list, trans_list):
-    #what do?:
+    #what does this do?:
     # 0. add "comment"-Package to document to handle language environments
     # 1. iterate over orig_list and find layout-blocks like chapters
     # 2. encapsulate full layout-block for original and for translated list in \begin{original | translated}
