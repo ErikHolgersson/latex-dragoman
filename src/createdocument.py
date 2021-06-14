@@ -94,14 +94,17 @@ def merge_ltx_lists(orig_list, trans_list):
             tmp_trans_list=[]
             if("end" in orig_list[i][0]):
                 ret_list.append(orig_list[i])
+                tmp_orig_list.append(('\\begin','',r'{original}','###'))
+                tmp_trans_list.append(('\\begin','',r'{translated}','###'))
                 if("document" in orig_list[i][2]):
                     break
             else:
+                tmp_orig_list.append(('\\begin','',r'{original}','###'))
                 tmp_orig_list.append(orig_list[i])
+                tmp_trans_list.append(('\\begin','',r'{translated}','###'))
                 tmp_trans_list.append(trans_list[i])
 
-            tmp_orig_list.append(('\\begin','',r'{original}','###'))
-            tmp_trans_list.append(('\\begin','',r'{translated}','###'))
+
 
             i+=1
             while not ((orig_list[i][0] in layout_cmds) or ("begin" in orig_list[i][0])):
