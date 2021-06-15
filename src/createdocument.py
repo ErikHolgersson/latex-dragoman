@@ -93,9 +93,9 @@ def merge_ltx_lists(orig_list, trans_list):
             tmp_orig_list=[]
             tmp_trans_list=[]
             if("end" in orig_list[i][0]):
-                ret_list.append(orig_list[i])
-                tmp_orig_list.append(('\\begin','',r'{original}','###'))
-                tmp_trans_list.append(('\\begin','',r'{translated}','###'))
+                ret_list.append([orig_list[i][0],orig_list[i][1],orig_list[i][2],'###'])
+                tmp_orig_list.append(('\\begin','',r'{original}',orig_list[i][3]))
+                tmp_trans_list.append(('\\begin','',r'{translated}',trans_list[i][3]))
                 if("document" in orig_list[i][2]):
                     break
             else:
