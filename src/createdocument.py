@@ -122,9 +122,18 @@ def merge_ltx_lists(orig_list, trans_list):
             i+=1
     return ret_list
 
-os.system("rm out/*")
-
 filepath = sys.argv[1]
+lang = sys.argv[2]
+
+languages = [ "BG","CS","DA","DE","EL","EN-GB","EN-US","EN","ES","ET","FI","FR","HU","IT","JA","LT","LV","NL",
+    "PL","PT-PT","PT-BR","PT","RO","RU","SK","SL","SV","ZH"]
+
+if lang.upper() not in languages:
+    print("No supported language has been given, please use one of the following options: ")
+    print(languages)
+    exit(255)
+
+os.system("rm out/*")
 
 orig_list=parse.ltxfile_to_list(filepath)
 with open("out/origlist.txt","x") as f:
@@ -142,7 +151,7 @@ with open("out/filteredlist.txt","x") as f:
 ltx_list=delete_first_column(ltx_list)
 ltx_list1d = list2d_to_list1d(ltx_list)
 
-translated_list=rest.query_deepl("EN", ltx_list1d)
+translated_list=rest.query_deepl(lang, ltx_list1d)
 with open("out/translatedlist.txt","x") as f:
     for line in translated_list:
         f.write(str(line)+"\n")
