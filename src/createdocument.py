@@ -123,12 +123,14 @@ def merge_ltx_lists(orig_list, trans_list):
     return ret_list
 
 filepath = sys.argv[1]
-lang = sys.argv[2]
+lang = sys.argv[2].upper()
+
+print("************\nBeginning translation of " + filepath + " to " + lang)
 
 languages = [ "BG","CS","DA","DE","EL","EN-GB","EN-US","EN","ES","ET","FI","FR","HU","IT","JA","LT","LV","NL",
     "PL","PT-PT","PT-BR","PT","RO","RU","SK","SL","SV","ZH"]
 
-if lang.upper() not in languages:
+if lang not in languages:
     print("No supported language has been given, please use one of the following options: ")
     print(languages)
     exit(255)
@@ -136,7 +138,7 @@ if lang.upper() not in languages:
 os.system("rm out/*")
 
 orig_list=parse.ltxfile_to_list(filepath)
-with open("out/origlist.txt","x") as f:
+with open("out/0-origlist.txt","x") as f:
     for line in orig_list:
         f.write(str(line)+"\n")
 
@@ -144,20 +146,28 @@ ltx_list=orig_list.copy()
 
 ltx_list=parse.filter_params(ltx_list)
 
-with open("out/filteredlist.txt","x") as f:
+with open("out/1-filteredlist.txt","x") as f:
     for line in ltx_list:
         f.write(str(line)+"\n")
 
-ltx_list=delete_first_column(ltx_list)
-ltx_list1d = list2d_to_list1d(ltx_list)
+threecol_list=delete_first_column(ltx_list)
+with open("out/2-threecol_list.txt","x") as f:
+    for line in threecol_list:
+        f.write(str(line)+"\n")
+
+
+ltx_list1d = list2d_to_list1d(threecol_list)
+with open("out/3-1dlist.txt","x") as f:
+    for line in ltx_list1d:
+        f.write(str(line)+"\n")
 
 translated_list=rest.query_deepl(lang, ltx_list1d)
-with open("out/translatedlist.txt","x") as f:
+with open("out/3-translatedlist.txt","x") as f:
     for line in translated_list:
         f.write(str(line)+"\n")
 
 translated_list2d = list1d_to_list2d(3, translated_list)
-with open("out/translatedlist2d.txt", "x") as f:
+with open("out/4-translatedlist2d.txt", "x") as f:
     for line in translated_list2d:
         f.write(str(line)+"\n")
 
@@ -165,7 +175,7 @@ trans_doc_list2d=[]
 for i in range(0,len(translated_list2d)):
     trans_doc_list2d.append([orig_list[i][0], translated_list2d[i][0], translated_list2d[i][1], translated_list2d[i][2]])
 
-with open("out/trans_doc_list2d.txt", "x") as f:
+with open("out/5-trans_doc_list2d.txt", "x") as f:
     for line in trans_doc_list2d:
         f.write(str(line) +"\n")
 
@@ -174,12 +184,12 @@ with open("out/trans_doc_list2d.txt", "x") as f:
 
 transdoc=str(parse.list_to_ltx(trans_doc_list2d))
 
-with open("out/transdoc.tex", "x") as f:
+with open("out/6-transdoc.tex", "x") as f:
     f.write(transdoc)
 
 merged_list=merge_ltx_lists(orig_list, trans_doc_list2d)
 
-with open("out/mergedlist.txt", "x") as f:
+with open("out/7-mergedlist.txt", "x") as f:
     for line in merged_list:
         f.write(str(line)+"\n")
     
